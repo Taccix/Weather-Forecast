@@ -1,2 +1,2 @@
 # Weather-Forecast
-Montclair highschool weather forecast project
+Montclair elementary weather forecast project
