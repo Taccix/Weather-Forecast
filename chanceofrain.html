@@ -1,0 +1,510 @@
+<html>
+<link rel="stylesheet" href="chanceofrain.css" media="all" /> 
+<body id = "body" class = "body">
+<div class = "leftside">
+<center><button class = "button2" onclick="RandomDay()">View Random Day</button></center>
+<center><button class = "button3" onclick = "CalendarWeather()">View June In Year </button></center>
+<center><button class = "button5" onclick = "UpYear()">></button></center>
+<center><button class = "button6" onclick = "DownYear()"><</button></center>
+<b class = "YearLabel">Year</b>
+<select class = "Year44" id = "Year4">
+<option value="1">1</option>
+<option value= "2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+</select>
+
+
+<b class = "Month2">Year</b>
+
+<select class = "Year" id = "Year3">
+<option value="1">1</option>
+<option value= "2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+
+</select>
+<b class = "Day2">Day</b>
+
+<select class = "Day" id = "Day3">
+
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+</select>
+
+
+<center><button class = "button1" onclick="GetDayYear()">View Day</button>
+</center>
+<center><button class = "button4" onclick = "PrintData()">View Data Summary</button></center>
+<b class = "demo2" id = "demo"></b>
+
+
+
+<center><img id = "Image1" class = "Img1" src = "Screenshots/Sunny.png" style = "visibility:hidden"width = "503" height = "503"/></center>
+<center><img id = "Image2" class = "Img2" src = "Screenshots/Partly Cloudy.png" style = "visibility:hidden"width = "503" height = "503"/></center>
+<center><img id = "Image3" class = "Img3" src = "Screenshots/Lightning-Raining.png" style = "visibility:hidden"width = "503" height = "503"/></center>
+<center><img id = "Image4" class = "Img4" src = "Screenshots/Raining.png" style = "visibility:hidden"width = "503" height = "503"/></center>
+<center><img id = "Data" class = "DataSum" src = "Screenshots/Data Summary.png" style = "visibility: hidden" width = "503" height = "503"/></center>
+<b id = "CalendarLabel" class = "CalendarLab"></b>
+<table id = "myTable" class = "Table" border = "5" style = "visibility: hidden">
+
+
+
+
+
+</table>
+
+
+
+
+<b id = "DayLab" class = "DayLab"></b>
+<b class = "WeatherForecast" id = "WeatherForecast" style = "visibility: hidden"></b>
+
+<b class = "DesLab" id = "DesLab"> This data shows the </b>
+
+<b class = "DesLab2" id = "DesLab2">weather every day</b>
+
+<b class = "DesLab3" id = "DesLab3">during the month of</b>
+
+<b class = "DesLab4" id = "DesLab4">June for 20 years.</b>
+</div>
+<script>
+var weatherdata = [[0, 0, 0, 0, 0, 1, 1, 2, 3, 2, 1, 1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0],  //0     0 = sunny
+                   [3, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 3, 3, 2, 1, 1, 1],  //1     1 = cloudy
+                   [0, 0, 1, 1, 2, 2, 3, 1, 0, 0, 0, 1, 1, 2, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //2     2 = rainy
+                   [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 3],  //3     3 = stormy
+                   [1, 1, 2, 3, 1, 0, 0, 0, 0, 1, 3, 2, 1, 0, 0, 0, 0, 1, 1, 1, 2, 3, 1, 0, 0, 0, 0, 0, 0, 0],  //4
+                   [0, 0, 0, 1, 2, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //5
+                   [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 1, 1, 0, 0, 0, 1, 1, 2, 3, 3, 2, 1, 0, 0, 0, 0],  //6
+                   [0, 0, 0, 1, 1, 1, 2, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 3, 0, 0, 0, 0, 0, 1, 2],  //7
+                   [3, 3, 1, 1, 0, 0, 1, 2, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 3, 3, 1, 0, 0, 0, 0, 0],  //8
+                   [3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 2, 2, 0, 0, 0, 1, 1, 2, 2, 3, 3],  //9
+                   [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 2, 3, 3, 1, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 1, 0, 0],  //10
+                   [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 2, 3, 3, 1, 0, 0, 1, 1, 2, 3, 3, 0, 0, 0, 0, 1, 1, 2],  //11
+                   [0, 0, 1, 1, 2, 2, 3, 3, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 3, 3, 1, 0, 0, 0],  //12
+                   [1, 1, 1, 2, 3, 3, 3, 1, 1, 0, 0, 0, 0, 1, 1, 1, 2, 3, 1, 1, 0, 0, 1, 1, 1, 1, 1, 2, 3, 3],  //13
+                   [0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 0, 0],  //14
+                   [0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 1, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0],  //15
+                   [2, 2, 3, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 3, 1, 1],  //16
+                   [2, 2, 3, 3, 1, 1, 0, 0, 0, 1, 1, 2, 2, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3],  //17
+                   [2, 3, 3, 1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 1, 0, 0, 0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //18
+                   [0, 0, 0, 1, 1, 2, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 1, 1, 0, 0, 0, 0, 0]]; //19
+
+
+var StartDays = [2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4, 5, 6, 0];
+var weeklist = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+var weeklist2 = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+var Table = document.getElementById('myTable');
+var ImageArray = ['Screenshots/Sunny.png', 'Screenshots/Partly Cloudy.png', 'Screenshots/Raining.png', 'Screenshots/Lightning-Raining.png'];		
+var Value;
+var CalendarL;
+var DataSummary = document.getElementById('Data');
+var imgg = document.getElementById('Image1');
+var img2 = document.getElementById('Image2');
+var img3 = document.getElementById('Image3');
+var img4 = document.getElementById('Image4');
+var demoLabel = document.getElementById("demo");
+CalendarL = document.getElementById('CalendarLabel');
+var SelectedMonth;
+var SelectedDay;
+var Forecast = document.getElementById('WeatherForecast');
+function GetDayYear(){
+
+SelectedDay = document.getElementById("Day3").value;
+SelectedMonth = document.getElementById("Year3").value;
+
+showanimage(SelectedDay, SelectedMonth);
+
+
+}
+
+function UpYear(){
+
+var one = 1;
+SelectedDay = document.getElementById("Day3").value;
+SelectedMonth = document.getElementById("Year3").value;
+
+if(SelectedDay == 30 && SelectedMonth == 20){
+
+showanimage(SelectedDay, SelectedMonth);
+
+}else if(SelectedDay == 30 && SelectedMonth != 20){
+
+SelectedDay = 1;
+
+SelectedMonth = parseInt(SelectedMonth) + parseInt(one);
+document.getElementById("Year3").value = SelectedMonth;
+document.getElementById("Day3").value = SelectedDay;
+showanimage(SelectedDay, SelectedMonth);
+
+}else if(SelectedDay < 30){
+
+SelectedDay = parseInt(SelectedDay) + parseInt(one);
+document.getElementById("Day3").value = SelectedDay;
+document.getElementById("Year3").value = SelectedMonth;
+showanimage(SelectedDay, SelectedMonth);
+
+}
+
+
+
+}
+
+function DownYear(){
+
+var one = 1;
+SelectedDay = document.getElementById("Day3").value;
+SelectedMonth = document.getElementById("Year3").value;
+
+if(SelectedDay == 1 && SelectedMonth == 1){
+
+showanimage(SelectedDay, SelectedMonth);
+
+}else if(SelectedDay == 1 && SelectedMonth != 1){
+
+SelectedDay = 30;
+
+SelectedMonth = parseInt(SelectedMonth) - parseInt(one);
+document.getElementById("Year3").value = SelectedMonth;
+document.getElementById("Day3").value = SelectedDay;
+showanimage(SelectedDay, SelectedMonth);
+
+}else if(SelectedDay > 1){
+
+SelectedDay = parseInt(SelectedDay) - parseInt(one);
+document.getElementById("Day3").value = SelectedDay;
+document.getElementById("Year3").value = SelectedMonth;
+showanimage(SelectedDay, SelectedMonth);
+
+}
+
+
+
+}
+function showanimage(SelectedDay, SelectedMonth){
+var imgg = document.getElementById('Image1');
+var img2 = document.getElementById('Image2');
+var img3 = document.getElementById('Image3');
+var img4 = document.getElementById('Image4');
+var weather;
+var e = 0;
+
+DataSummary.style.visibility = 'hidden';
+Table.style.visibility = "hidden";
+demoLabel.style.visibility = "visible";
+CalendarL.style.visibility = "hidden";
+Forecast.style.visibility = "visible";
+if(weatherdata[SelectedMonth - 1][SelectedDay - 1] == 0){
+
+	img2.style.visibility = 'hidden';
+	img3.style.visibility = 'hidden';
+	img4.style.visibility = 'hidden';
+    imgg.style.visibility = 'visible';
+	e = 0;
+}else if(weatherdata[SelectedMonth-1][SelectedDay - 1] == 1){
+	imgg.style.visibility = 'hidden';
+	img3.style.visibility = 'hidden';
+	img4.style.visibility = 'hidden';
+    img2.style.visibility = 'visible'
+e = 1;
+
+}else if(weatherdata[SelectedMonth - 1][SelectedDay - 1] == 2){
+	imgg.style.visibility = 'hidden';
+	img2.style.visibility = 'hidden';
+	img4.style.visibility = 'visible';
+    img3.style.visibility = 'hidden';
+e = 2;
+}else if(weatherdata[SelectedMonth - 1][SelectedDay - 1] == 3){
+	imgg.style.visibility = 'hidden';
+	img2.style.visibility = 'hidden';
+	img3.style.visibility = 'visible';
+    img4.style.visibility = 'hidden';
+e = 3;
+}
+Value = StartDays[SelectedMonth - 1];
+var a = Value;
+if(e == 0){
+
+weather = "Sunny";
+}else if(e == 1){
+weather = "Cloudy";
+}else if(e == 2){
+weather = "Rainy"
+}else if (e == 3){
+weather = "Stormy";
+}
+for(var k = 1; k < SelectedDay;k++){
+a = (a + 1) % 7;
+}
+var DayString = weeklist2[a];
+Forecast.innerHTML = weather;
+demoLabel.innerHTML =  DayString + ", June " + SelectedDay + ", Year " + SelectedMonth;
+}
+function RandomDay(){
+var weather;
+var e = 0;
+var x = Math.floor(Math.random() * 20)
+var y = Math.floor(Math.random() * 30)
+DataSummary.style.visibility = 'hidden';
+Table.style.visibility = "hidden";
+demoLabel.style.visibility = "visible";
+CalendarL.style.visibility = "hidden";
+Forecast.style.visibility = "visible";
+if(weatherdata[x][y] == 0){
+	img2.style.visibility = 'hidden';
+	img3.style.visibility = 'hidden';
+	img4.style.visibility = 'hidden';
+    imgg.style.visibility = 'visible';
+	e = 0;
+
+}else if(weatherdata[x][y] == 1){
+	imgg.style.visibility = 'hidden';
+	img3.style.visibility = 'hidden';
+	img4.style.visibility = 'hidden';
+    img2.style.visibility = 'visible';
+	e = 1;
+
+}else if(weatherdata[x][y] == 2){
+	imgg.style.visibility = 'hidden';
+	img2.style.visibility = 'hidden';
+	img4.style.visibility = 'visible';
+    img3.style.visibility = 'hidden';
+	e = 2;
+
+}else if(weatherdata[x][y] == 3){
+	imgg.style.visibility = 'hidden';
+	img2.style.visibility = 'hidden';
+	img3.style.visibility = 'visible';
+    img4.style.visibility = 'hidden';
+	e = 3;
+}
+if(e == 0){
+
+weather = "Sunny";
+}else if(e == 1){
+weather = "Cloudy";
+}else if(e == 2){
+weather = "Rainy"
+}else if (e == 3){
+weather = "Stormy";
+}
+x = x + 1;
+y = y + 1;
+var a = StartDays[x - 1];
+for(var k = 1; k < y;k++){
+a = (a + 1) % 7;
+}	Forecast.innerHTML = weather;
+	demoLabel.innerHTML = weeklist2[a] + ", June " + y + ", Year " + x;
+document.getElementById("Day3").value = y;
+document.getElementById("Year3").value = x;
+}
+
+function CalendarWeather(){
+	img2.style.visibility = 'hidden';
+	img3.style.visibility = 'hidden';
+	img4.style.visibility = 'hidden';
+	imgg.style.visibility = 'hidden';
+	Forecast.style.visibility = "hidden";
+	demoLabel.style.visibility = 'hidden';
+	DataSummary.style.visibility = 'hidden';
+	CalendarL.style.visibility = 'visible';
+var cell;
+var cell1;
+var cell2;
+var d = 0;
+var Rows = 1;
+Day = document.getElementById('DayLab');
+Day = 0;
+Table = document.getElementById('myTable');
+
+
+var GetRows = document.getElementById('myTable').rows.length;
+
+
+
+if(GetRows > 0){
+
+Clear(GetRows);
+}
+var newRow = Table.insertRow(-1);
+for(var r = 0; r < 7;r++){
+cell = newRow.insertCell(r);
+
+cell.innerHTML = weeklist[r];
+
+}
+
+newRow = Table.insertRow(-1);
+var SelectedYear = document.getElementById("Year4").value;
+
+Value = StartDays[SelectedYear - 1];
+
+CalendarL.innerHTML = "June of Year " + SelectedYear;
+Table.style.visibility = "visible";
+for(var r2 = 0; r2 < 6; r2++){
+for(var c2 = 0; c2 < 7; c2++){
+cell = newRow.insertCell(c2);
+cell.setAttribute("width", "50");
+cell.setAttribute("height", "75");
+
+}
+newRow = Table.insertRow(-1);
+}
+Value = StartDays[SelectedYear - 1];
+while(Day < 30){
+var img = document.createElement('img');
+var DayAlign = document.createElement('div');
+
+
+//First If Statment
+if(weatherdata[SelectedYear - 1][Day] == 0){
+img.src = ImageArray[0];
+DayAlign.innerHTML = Day + 1;
+DayAlign.setAttribute("align", "top");
+img.setAttribute("width", "50");
+//Try to Insert image into a specific cell
+img.setAttribute("height", "50");
+cell2 = Table.rows[Rows].cells[Value];
+cell2.append(DayAlign);
+cell2.appendChild(img);
+
+
+
+
+}else if(weatherdata[SelectedYear - 1][Day] == 1){
+img.src = ImageArray[1];
+DayAlign.innerHTML = Day + 1;
+DayAlign.setAttribute("align", "top");
+img.setAttribute("width", "50");
+img.setAttribute("height", "50");
+cell2 = Table.rows[Rows].cells[Value];
+cell2.append(DayAlign);
+cell2.appendChild(img);
+
+}else if(weatherdata[SelectedYear - 1][Day] == 2){
+img.src = ImageArray[2];
+DayAlign.innerHTML = Day + 1;
+DayAlign.setAttribute("align", "top");
+img.setAttribute("width", "50");
+img.setAttribute("height", "50");
+
+cell2 = Table.rows[Rows].cells[Value];
+cell2.append(DayAlign);
+cell2.appendChild(img);
+
+}else if(weatherdata[SelectedYear - 1][Day] == 3){
+img.src = ImageArray[3];
+DayAlign.innerHTML = Day + 1;
+DayAlign.setAttribute("align", "top");
+img.setAttribute("width", "50");
+
+img.setAttribute("height", "50");
+cell2 = Table.rows[Rows].cells[Value];
+cell2.append(DayAlign);
+cell2.appendChild(img);
+
+}
+
+
+
+
+Value = (Value + 1) % 7;
+Day = Day + 1;
+if(Value == 0){
+Rows = Rows + 1;
+
+}
+}
+
+
+
+}
+
+function PrintData(){
+	img2.style.visibility = 'hidden';
+	img3.style.visibility = 'hidden';
+	img4.style.visibility = 'hidden';
+	imgg.style.visibility = 'hidden';
+	Table.style.visibility = "hidden";
+	demoLabel.style.visibility = 'hidden';
+	CalendarL.style.visibility = 'hidden';
+	DataSummary = document.getElementById('Data');
+	DataSummary.style.visibility = 'visible';
+	Forecast.style.visibility = "hidden";
+
+}
+
+
+function Clear(GetRows){
+while(GetRows > 0){
+
+document.getElementById('myTable').deleteRow(0);
+GetRows--;
+}
+
+}
+</script>
+</div>
+</body>
+</html>

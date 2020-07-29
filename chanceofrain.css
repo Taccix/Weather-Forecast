@@ -1,0 +1,319 @@
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+
+body {
+	background: darkgray;
+	}
+
+
+
+
+select {
+display: block;
+margin: 0 auto;
+padding: 1px -1px;
+}
+
+div{
+	position: relative;
+	
+	
+}
+.demo2 {
+	position: fixed;
+	color: white;
+	left: 472px;
+	top: 30px;
+	font-size: 19;
+	
+}
+.WeatherForeCast{
+position: absolute;
+color: white;
+left: 200px;
+top: 25px;
+font-size: 19;	
+}
+
+/*View Day Button*/
+.button1{
+	
+	background-color: darkblue;
+	border: none;
+	color: white;
+	padding: 10px 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	position: absolute;
+	border: 3px solid;
+	top: 260px;
+	left: 45px;
+}
+.button1:hover{
+	
+	background-color: lightblue;
+	color: black;
+}
+/*View Random Day Button*/
+.button2{
+	background-color: darkblue;
+	border: none;
+	color: white;
+	padding: 8px 12px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	position: absolute;
+	border: 3px solid;
+	top: 145px;
+	left: 15px;
+	
+}
+.button2:hover{
+	
+	background-color: lightblue;
+	color: black;
+}
+/*View June in Year Button*/
+.button3{
+	background-color: darkblue;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	position: absolute;
+	border: 3px solid;
+	top: 385px;
+	left: 15px;
+	
+}
+.button3:hover{
+	
+	background-color: lightblue;
+	color: black;
+}
+/*view Data Summary Button*/
+.button4{
+	
+	background-color: darkblue;
+	border: none;
+	color: white;
+	padding: 10px 9px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	position: absolute;
+	border: 3px solid;
+	top: 500px;
+	left: 15px;
+}
+.button5{
+	
+	background-color: darkblue;
+	border: none;
+	color: white;
+	padding: 10px 7px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	position: absolute;
+	border: 3px solid;
+	top: 260px;
+	left: 115px;
+}
+.button6{
+	
+	background-color: darkblue;
+	border: none;
+	color: white;
+	padding: 10px 7px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	position: absolute;
+	border: 3px solid;
+	top: 260px;
+	left: 12px;
+}
+.button4:hover{
+	
+	background-color: lightblue;
+	color: black;
+}
+.button5:hover{
+	
+	background-color: lightblue;
+	color: black;
+}
+.button6:hover{
+	
+	background-color: lightblue;
+	color: black;
+}
+.Img1{
+	position: absolute;
+	top: 60px;
+	left: 180px;
+	
+}
+.Img2{
+	position: absolute;
+	top: 60px;
+	left: 180px;
+}
+
+.Img3{
+	position: absolute;
+	top: 60px;
+	left: 180px;
+}
+
+.Img4{
+	position: absolute;
+	top: 60px;
+	left: 180px;
+}
+/*Check Weather Year Menu*/
+.Year{
+	
+	position: absolute;
+	top: 235px;
+	left: 85px;
+	background-color: lightgray;
+}
+/*Check Weather Day Menu*/
+.Day{
+	position: absolute;
+	top: 235px;
+	left: 30px;
+	background-color: lightgray;
+	
+	
+}
+/*View June in Year Menu*/
+.Year44{
+	position: absolute;
+	top: 360px;
+	left: 60px;
+	background-color: lightgray;
+	
+	
+}
+/*View June in Year Label*/
+.YearLabel{
+	position: absolute;
+	color: white;
+	left: 60px;
+	top: 341px;
+	
+}
+/*Check Weather Year Label*/
+.Month2{
+	
+	position: absolute;
+	color: white;
+	left: 85px;
+	top: 215px;
+	
+}
+/*Check Weather Day Label*/
+.Day2{
+	
+	position: absolute;
+	color: white;
+	left: 30px;
+	top:215px;
+	
+	
+}
+
+.DataSum {
+	position: absolute;
+	top: 60px;
+	left: 180px;
+	
+}
+
+
+
+.CalendarLab{
+	position: absolute;
+	color: white;
+	left: 336px;
+	top: 20px;
+	
+	font-size: 19;
+	
+	
+}
+
+.Table{
+	position: absolute;
+	color: white;
+	left: 190px;
+	top: 55px;
+	font-size: 20;
+	}
+	
+
+.DesLab{
+	position: absolute;
+	
+	color: white;
+	
+	top: 10px;
+	font-size: 20;
+	
+	
+}
+
+.DesLab2{
+	position: absolute;
+	
+	color: white;
+	
+	top: 30px;
+	font-size: 20;
+	
+	
+}
+
+.DesLab3{
+	position: absolute;
+	
+	color: white;
+	
+	top: 50px;
+	font-size: 20;
+	
+	
+}
+.DesLab4{
+	position: absolute;
+	
+	color: white;
+	
+	top: 70px;
+	font-size: 20;
+	
+	
+}
