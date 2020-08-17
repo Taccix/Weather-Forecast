@@ -1,2 +1,2 @@
-# Weather-Forecast
+# ChanceofRain
 Montclair elementary weather forecast project
